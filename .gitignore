@@ -128,3 +128,19 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# ide
+.idea
+.vscode
+
+# dependencies
+node_modules
+package-lock.json*
+
+# project
+.env*
+!.env.example
+
+# misc
+.DS_Store
+
