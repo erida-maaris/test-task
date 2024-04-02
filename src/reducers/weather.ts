@@ -1,12 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import Weather from '../api/weather';
-
-export type WeatherData = { id: number; name: string; description: string; updatedAt: string; createdAt: string; schema: any[] };
-export type CountryCoords = { latitude: number; longitude: number };
+import { CountryCoords, WeatherData } from '../types/weather.types';
 
 type InitState = {
-  data: WeatherData[];
+  data: WeatherData;
   latitude: number;
   longitude: number;
   loading: boolean;
@@ -25,7 +23,7 @@ export const getCurrentWeather = createAsyncThunk(
 export const weatherSlice = createSlice({
   name: 'weather',
   initialState: {
-    data: [],
+    data: {},
     latitude: 49,
     longitude: 32,
     error: '',
